@@ -4,6 +4,7 @@
 #include "pooEx1.h"
 #include "pooEx2.h"
 #include "pooEx3.h"
+#include "Cours0303.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ int main()
     //pooEx1();
     //pooEx2();
     pooEx3();
+    //Cours0303();
     
 
 }
