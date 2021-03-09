@@ -1,4 +1,4 @@
-## Cours 09 mars 
+# Cours 09 mars 
 Tous les fichiers présentés dans le cours se trouveront dans un repo github : exemple-cours
 La représentation des objets en C++:
 il faut comprendre la séparation entre représentation et instanciation
@@ -47,3 +47,71 @@ Container c;
 ```
 Avec cette méthode, le compilateur va déjà passer dans le constructeur avant d'instanciatier o
 
+
+
+## Héritage
+Si on fait une classe Square et une classe Hexagon on aura pour chaque :
+```
+class Square{
+    const int nbr_side;
+    double side_lengthM
+
+    double area(){
+        return pow(side_length, 2);
+    }
+}
+
+class Hexagon{
+    const int nbr_side;
+    double side_lengthM
+
+    double area(){
+        return 3.0 * sqrt(3) / 2.0 * pow(side_length, 2);
+    }
+}
+```
+Elles ont les mêmes non de méthode
+
+C'est là que l'orienté objet devient puissant avec l'héritage
+
+"""
+// Parent
+class Shape{
+    public:
+        Shape() {}
+        double side_length;
+        string name;
+        int nbr_side;
+
+};
+// Enfant
+class Square : public Shape{
+    public:
+        Square() {}
+
+        double area(){
+            return pow(this->side_length, 2);
+        }
+}
+"""
+Tout ce que le parent a accès l'enfant a aussi pour autant que ce soit public ou protected
+Protected pour soi-même et les enfants
+Private pour soi-même uniquement
+
+Constructeurs des classes enfants: les 2 premiers sont identiques
+```
+class Square : public Shape{
+    public:
+    Square() {}
+};
+
+class Square : public Shape{
+    public:
+    Square() : Shape() {}
+};
+
+class Square : public Shape{
+    public:
+    Square() : Shape(2) {}
+};
+```

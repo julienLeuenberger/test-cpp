@@ -7,6 +7,8 @@
 #include "Cours0303.h"
 #include "exConstruct.h"
 #include "exConstruct2.h"
+#include "exHeritage1.h"
+#include "exHeritage2.h"
 
 using namespace std;
 
@@ -20,6 +22,6 @@ int main()
     //pooEx3();
     //Cours0303();
     //exConstruct();
-    exConstruct2();
-
+    //exConstruct2();
+    exHeritage2();
 }
