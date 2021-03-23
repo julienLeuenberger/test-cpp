@@ -6,12 +6,12 @@ using namespace std;
 
 
 
-void exHeritage3(){
+// void exHeritage3(){
 
-    cout << "Exercice 2" << endl << endl;
-    Voiture v;
-    v.avancer();
-    v.tourner();
+//     cout << "Exercice 2" << endl << endl;
+//     Vehicule v;
+//     v.avancer();
+//     v.tourner();
 
-}
+// }
 

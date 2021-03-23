@@ -115,3 +115,14 @@ class Square : public Shape{
     Square() : Shape(2) {}
 };
 ```
+
+
+## Cours 16 mars
++ public
+- private
+dièse protected
+agrégation : objet non responsable du cycle de vie
+Composition : responsable
+
+
+## Cours 23 mars
