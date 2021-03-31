@@ -9,7 +9,8 @@
 //#include "exConstruct2.h"
 //#include "exHeritage1.h"
 //#include "exHeritage2.h"
-#include "Cours2203.h"
+//#include "Cours2203.h"
+#include "Cours3003.h"
 
 using namespace std;
 
@@ -25,5 +26,7 @@ int main()
     //exConstruct();
     //exConstruct2();
     ///exHeritage2();
-    Cours2203();
+    //Cours2203();
+    //cours22032();
+    Cours3003();
 }

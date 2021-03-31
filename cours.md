@@ -126,3 +126,12 @@ Composition : responsable
 
 
 ## Cours 23 mars
+Polymorphisme : virtual avant la méthode de la classe parent
+Pour éviter les problème : écrire override vers les fonctions enfants
+En mettant une fonction virtual à 0 on ne peut plus construire d'humain
+
+
+## Cours 30 mars
+Valeur static propre à une classe et donc à toutes les instances
+=> initialiser en dehors de la classe
+Allocation : Foo* p = new Foo();
