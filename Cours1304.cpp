@@ -24,10 +24,16 @@ struct  ENfant : public Mere, public Pere
     ENfant(){ cout << "Enfant construit" << endl; }
     ENfant(int a) : GrandMere(a), Mere(8) { cout << "Enfant construit avec val" << endl; }
 };
+struct objetVirtuel
+{
+    objetVirtuel(){cout << "objetVirtuel construit" << endl;}
+    //virtual void manger()=0;
+};
 
 void Cours1304()
 {
     cout << "Example heritage" << endl;
     ENfant e(12);
     cout << "Value = " << e.value << endl;
-}
+    objetVirtuel obj;
+}   

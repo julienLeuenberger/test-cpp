@@ -135,3 +135,15 @@ En mettant une fonction virtual à 0 on ne peut plus construire d'humain
 Valeur static propre à une classe et donc à toutes les instances
 => initialiser en dehors de la classe
 Allocation : Foo* p = new Foo();
+
+## Cours 13 avril
+Héritage virtuel
+Voir exemple Cours1304.cpp => c'est une structure d'héritage en diamant
+ça peut poser problème et on essaie d'éviter
+Correction exercice 2 polymorphisme:
+La classe printable est une interface. Une interface est une classe avec UNIQUEMENT des méthodes virtuelles pures. Elle permet de faire hériter certaine méthodes.
+Règle ou bonne pratique : héritages multiples si les classes ont des attributs
+Règle ou bonne pratique : une classe peut hériter d'une 2ème classe uniquement si c'est un interface
+
+On ne peut pas instancier une interface ou toute classe avec au moins une méthode virtuelle pure.
+Si une méthode est virtuelle dans une classe (pas une interface), le destructeur doit être virtuel
