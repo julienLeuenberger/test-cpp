@@ -147,3 +147,129 @@ Règle ou bonne pratique : une classe peut hériter d'une 2ème classe uniquemen
 
 On ne peut pas instancier une interface ou toute classe avec au moins une méthode virtuelle pure.
 Si une méthode est virtuelle dans une classe (pas une interface), le destructeur doit être virtuel
+
+## Cours 20 avril
+Rappel allocation
+On remarque que delete veut toujours une adresse (un pointeur)
+
+Foo* p = new Foo();
+// p retourne null si problème
+delete p;
+
+
+Foo* tab[10]; // 10 est fixe désavantage
+tab[0] = new Foo();
+delete tab[0];
+
+
+int* tab_i = new int[10]; // fixe aussi
+delete[] tab_i;
+
+
+
+
+Foo** alloc(int capacite)
+{
+    Foo** tab = new Foo*[capacite](); // dans tab on a une adresse de tableau
+    for (int i =0; i < capacite; i++)
+    {
+        tab[i] = nullptrM
+    }
+    tab[0] = new Foo();
+    tab[0]->value ) 12;
+
+    return tab;
+}
+
+int main ()
+{
+
+    Foo** tab = alloc(10);
+    delete tab[0];
+    delete[] tab;
+}
+
+// tableau amélioré
+
+struct Data
+{
+    int nbr;
+    int capacite;
+    Foo** tab;
+
+    // add
+    // delete
+    // init
+};
+
+
+Erreur en C++:
+Exemple pour une division par zéro : on teste avant la valeur, ... => naif car beaucoup de retour de code pour un code simple et ça engendre le double de ligne de code
+
+Solution:
+
+const int ERROR_FLOATING_POINT = 100;
+
+int func1(int value)
+{
+    if(value == 0)
+    {
+        throw ERROR_FLOATING_POINT
+    }
+}
+
+
+try
+{
+    int ret func1(0);
+}
+catch(int value) // problème entier
+{
+    cout << "Il y a eu un problème : "<< value << endl;
+}
+catch(...) // autre problème
+{
+
+}
+
+Quand on lève des exceptions il faut absolument les catcher
+Si on trouve pas le type d'execption on retire le catch(...) et on lit le message d'erreur. 
+
+
+
+
+Il existe une interface exception qui contient au moins "what"
+class MyException : public exception
+{
+    public:
+        MyException(string const& phrase = "", int num=0) throw(): num(num), phrase(phrase){}
+        virtual const char* what() const throw()
+        {
+            return phrase.c_str();
+        }
+        virtual ~MyException() throw() {}
+        int num;
+    private:
+        string phrase;
+
+};
+
+// au moment de l'erreur :
+    throw MyException("Problème BOOM", ERROR_FLOATING_POINT)
+
+
+catch(MyException& e) // interet du & ou * : on ne passe que l'adresse sinon on copie l'entier de l'objet (temps de calcul) 
+{
+    cout << "Il y a eu un problème : "<< e.what << "le num : " << e.num << endl;
+}
+
+Une variable déclarée dans try n'existe pas dans le catch ou le reste du code
+
+Si on veut propager d'un catch a un suivant on peut faire : throw;
+
+Si c'est ça arrive souvent ce n'est pas une exception
+
+Une boucle for avec un try catch à l'intérieur peut être une bonne solution pour lire du texte par exemple
+
+## Cours 21 avril
+On peut faire une allocation dans un try catch pour directement gérer le problème dans le catch

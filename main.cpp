@@ -11,7 +11,8 @@
 //#include "exHeritage2.h"
 //#include "Cours2203.h"
 //#include "Cours3003.h"
-#include "Cours1304.h"
+//#include "Cours1304.h"
+#include "Cours2104.h"
 
 using namespace std;
 
@@ -32,6 +33,13 @@ int main()
     //Cours2203();
     //cours22032();
     //Cours3003();
-    Cours1304();
+    //Cours1304();
+    //Cours2104_Alloc_ex1();
+    //Cours2104_Alloc_ex2();
+    //Cours2104_Exception_ex1();
+    //Cours2104_Exception_ex2();
+    //Cours2104_Exception_ex3();
+    //Cours2104_Exception_ex4();
+    Cours2104_Exception_ex5();
 
 }
