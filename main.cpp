@@ -40,6 +40,7 @@ int main()
     //Cours2104_Exception_ex2();
     //Cours2104_Exception_ex3();
     //Cours2104_Exception_ex4();
-    Cours2104_Exception_ex5();
+    //Cours2104_Exception_ex5();
+    Cours2104_Exception_ex7();
 
 }

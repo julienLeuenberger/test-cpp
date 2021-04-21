@@ -130,6 +130,8 @@ void Cours2104_Exception_ex2()
 
 // EX 6
 // f2 et f3 ne sont pas supprimés
+// f2 car l'exception arrive avant le delete
+// f3 car c++ détruit automatiquement les objets mais pas les allocs (pointeurs)
 
 struct Foo
 {
@@ -213,6 +215,49 @@ void Cours2104_Exception_ex5(){
         Foo* f2 = new Foo("f2");
         func5(); // Si elle func5 lève une exception delete f2 ne sera pas executé
         delete f2;
+    }
+    catch(char const* m)
+    {
+        cout << "Problème : " << m << endl;   
+    }
+}
+
+// EX 7
+// Foo : f1 est construit
+// Foo : f3 est construit
+// Foo : f2 est construit
+// Foo : f4 est construit
+// Foo : f4 est détruit Il détruit f4 comme il y a un throw
+// Foo : f2 est détruit
+// Problème : BOOM
+// Foo : f3 est détruit // les derniers en premier
+// Foo : f1 est détruit
+
+
+struct DynamicFoo
+{
+    DynamicFoo(string name)
+    {
+        p = new Foo(name);
+    }
+
+    ~DynamicFoo()
+    {
+        delete p;
+    }
+
+    Foo* p;
+};
+
+void Cours2104_Exception_ex7()
+{
+    Foo f1("f1");
+    DynamicFoo f3("f3");
+
+    try
+    {
+        DynamicFoo f2("f2");
+        func5();
     }
     catch(char const* m)
     {
