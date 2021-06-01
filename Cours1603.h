@@ -1,3 +1,3 @@
-#pragma onces
+#pragma once
 
 void Cours1603();

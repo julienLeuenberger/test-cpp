@@ -273,3 +273,9 @@ Une boucle for avec un try catch à l'intérieur peut être une bonne solution p
 
 ## Cours 21 avril
 On peut faire une allocation dans un try catch pour directement gérer le problème dans le catch
+
+
+## Cours 1 juin
+surcharge des opérateurs
+Point operator+(const Point& p1, const Point& p2) { code here}
+mettre const sur les méthodes qui ne modifient pas les attribut

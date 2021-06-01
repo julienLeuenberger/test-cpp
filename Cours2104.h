@@ -1,4 +1,4 @@
-#pragma onces
+#pragma once
 
 void Cours2104_Alloc_ex1();
 void Cours2104_Alloc_ex2();
